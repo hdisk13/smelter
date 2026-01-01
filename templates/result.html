@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Results</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; max-width: 600px; margin: 2rem auto; padding: 1rem; }
+        .result { border: 1px solid #ccc; padding: 1.5rem; border-radius: 8px; background: #f9f9f9; }
+        h1, h2 { color: #0066cc; }
+        .amount { font-size: 2.2rem; font-weight: bold; margin: 1rem 0; }
+        .back { margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <h1>Loan Calculation Result</h1>
+
+    <div class="result">
+        <h2>Summary</h2>
+        <p>Loan Amount: <strong>${{ printf "%.2f" (div (float .PrincipalCents) 100) }}</strong></p>
+
+        <div class="amount">Monthly Payment: {{ .MonthlyPaymentStr }}</div>
+
+        <p>Total Amount Paid: <strong>{{ .TotalPaymentStr }}</strong></p>
+        <p>Total Interest: <strong>{{ .TotalInterestStr }}</strong></p>
+    </div>
+
+    <div class="back">
+        <a href="/">← Calculate another loan</a>
+    </div>
+</body>
+</html>
