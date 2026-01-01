@@ -17,8 +17,7 @@
 
     <div class="result">
         <h2>Summary</h2>
-        <p>Loan Amount: <strong>${{ printf "%.2f" (div (float .PrincipalCents) 100) }}</strong></p>
-
+        <p>Loan Amount: <strong>{{ .MonthlyPaymentStr }}</strong></p>
         <div class="amount">Monthly Payment: {{ .MonthlyPaymentStr }}</div>
 
         <p>Total Amount Paid: <strong>{{ .TotalPaymentStr }}</strong></p>
